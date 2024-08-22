@@ -4,14 +4,33 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Osas</title>
+		<style>
+			body {
+				text-align: center;
+				background-color: pink;
+			}
+
+			img {
+				width: 100px;
+				border-radius: 4%;
+			}
+		</style>
 	</head>
 	<body>
-		<img src="" alt="osas' image" />
+		<img src="images/azriel.jpg" alt="osas' image" />
 		<h1>my name is Osas</h1>
 		<p>my favourite food is spaghetti</p>
 		<p>my favourite subject is coding</p>
-		<p>my favourite colour is brown</p>
-		<button>yellow</button>
-		<button>red</button>
+		<p>my favourite colour is pink</p>
+		<button
+			onclick="document.querySelector('body').style.backgroundColor='yellow'"
+		>
+			yellow
+		</button>
+		<button
+			onclick="document.querySelector('body').style.backgroundColor='red'"
+		>
+			red
+		</button>
 	</body>
 </html>
