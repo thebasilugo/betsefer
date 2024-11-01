@@ -3,18 +3,90 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Summer</title>
+		<title>Summer 24 Coding Class</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
 		<style>
 			body {
 				text-align: center;
-				background-color: pink;
-			}
-
-			img {
-				width: 100px;
-				border-radius: 4%;
 			}
 		</style>
 	</head>
-	<body></body>
+	<body class="bg-gradient-to-r from-blue-900 to-red-900 m-4 mt-0">
+		<header class="py-10">
+			<h1 class="text-5xl font-bold text-white">
+				Welcome to Our 2024 Summer Coding Class!
+			</h1>
+			<p class="mt-4 text-xl text-white">
+				Meet our amazing students and learn with us!
+			</p>
+
+			<!-- Search Bar -->
+			<div class="mt-8">
+				<input
+					type="text"
+					id="search"
+					placeholder="Search for students..."
+					class="p-2 rounded-md w-1/2"
+				/>
+			</div>
+		</header>
+
+		<div class="container mx-auto px-4">
+			<div
+				class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+				id="student-container"
+			></div>
+		</div>
+
+		<footer class="py-10">
+			<p class="text-gray-200">Join us and start your coding journey!</p>
+		</footer>
+
+		<script>
+			const students = [
+				{
+					name: "Zoe",
+					image: "images/zoe.jpg",
+					description: "Loves IndoMie and the color blue!",
+					profileLink: "zoe/",
+				},
+			];
+
+			const studentContainer = document.getElementById("student-container");
+
+			// Function to render student cards
+			function renderStudents(students) {
+				studentContainer.innerHTML = "";
+				students.forEach((student) => {
+					const card = `
+                    <div class="student-card bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img src="${student.image}" alt="${student.name}" class="w-full h-48 object-cover" />
+                        <div class="p-4">
+                            <h2 class="text-xl font-semibold">${student.name}</h2>
+                            <p class="text-gray-600">${student.description}</p>
+                            <button onclick="location.href='${student.profileLink}'" class="mt-2 bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition duration-300">View Profile</button>
+                        </div>
+                    </div>
+                `;
+					studentContainer.innerHTML += card;
+				});
+			}
+
+			// Initial rendering of student cards
+			renderStudents(students);
+
+			// Search functionality
+			const searchInput = document.getElementById("search");
+			searchInput.addEventListener("input", function () {
+				const searchTerm = this.value.toLowerCase();
+				const filteredStudents = students.filter((student) =>
+					student.name.toLowerCase().includes(searchTerm)
+				);
+				renderStudents(filteredStudents);
+			});
+		</script>
+	</body>
 </html>
