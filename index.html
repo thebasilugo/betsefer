@@ -47,7 +47,7 @@
 			const students = [
 				{
 					name: "Osas",
-					image: "tutorial/image.jpeg",
+					// image: "images/chibuike.jpg",
 					description: "The instructor",
 					profileLink: "tutorial/",
 				},
@@ -107,7 +107,7 @@
 				},
 				{
 					name: "David",
-					image: "images/maduka.jpg",
+					image: "images/madukadavid.jpg",
 					description: "Likes Jollof rice and chicken!",
 					profileLink: "maduka/",
 				},
@@ -135,15 +135,15 @@
 					description: "Loves yam and the color pink!",
 					profileLink: "precious/",
 				},
-				{
-					name: "Somto",
-					image: "images/somto.jpg",
-					description: "Loves blue and coding.",
-					profileLink: "somto/",
-				},
+				// {
+				// 	name: "Somto",
+				// 	image: "images/somto.jpg",
+				// 	description: "Loves blue and coding.",
+				// 	profileLink: "somto/",
+				// },
 				{
 					name: "David",
-					image: "images/stephen.jpg",
+					image: "images/stevendavid.jpg",
 					description: "Loves rice, red and geography!",
 					profileLink: "stephen/",
 				},
@@ -165,7 +165,7 @@
 				students.forEach((student) => {
 					const card = `
                     <div class="student-card bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img src="${student.image}" alt="${student.name}" class="w-full h-48 object-cover filter transition-all duration-300  blur-sm hover:blur-none" />
+                        <img src="${student.image}" alt="${student.name}" class="w-full h-48 object-cover filter transition-all duration-300" />
                         <div class="p-4">
                             <h2 class="text-xl font-semibold">${student.name}</h2>
                             <p class="text-gray-600">${student.description}</p>
